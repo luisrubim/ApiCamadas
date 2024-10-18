@@ -1,2 +1,2 @@
 # ApiCamadas
-Estrutura básica de uma projeto em camadas
+Estrutura básica de um projeto em camadas
