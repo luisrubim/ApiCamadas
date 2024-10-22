@@ -10,5 +10,9 @@
         public string? Cidade { get; set; }
         public string? Estado { get; set; }
 
+        public Guid FornecedorId { get; set; }  
+        /*EF Relation */
+        public Fornecedor? Fornecedor { get; set; }
+
     }
 }

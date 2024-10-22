@@ -7,7 +7,7 @@ namespace Projeto.Business.Interfaces
     {
         Task Adicionar(TEntity entity);
         Task<TEntity> ObterPorId(Guid id);
-        Task<List<Entity>> ObterTodos();
+        Task<List<TEntity>> ObterTodos();
         Task Atualizar(TEntity entity);
         Task Remover(Guid id);
         Task<IEnumerable<TEntity>> Buscar(Expression<Func<TEntity, bool>> predicate);
