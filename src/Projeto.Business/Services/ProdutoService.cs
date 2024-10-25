@@ -20,11 +20,14 @@ namespace Projeto.Business.Services
         {
             if (!ExecutarValidacao(new ProdutoValidation(), produto)) return;
 
-            if(_produtoRepository.Buscar(p => p.Nome.Equals(produto.Nome)).Result.Any())
-            {
+            if (_produtoRepository.ObterPorId(produto.Id) != null) 
+                Notificar("Já existe um produto com o ID informado!");
+
+            if (_produtoRepository.Buscar(p => p.Nome.Equals(produto.Nome)).Result.Any())
                 Notificar(mensagemExisteProdutoMesmoNome);
+
+            if (TemNotificacao())
                 return;
-            }
 
             await _produtoRepository.Adicionar(produto);
         }

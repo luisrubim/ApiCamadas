@@ -28,6 +28,11 @@ namespace Projeto.Business.Services
             _notificador.Handle(new Notificacao(mensagem));
         }
 
+        protected bool TemNotificacao()
+        {
+            return _notificador.TemNotificacao();
+        }
+
         protected bool ExecutarValidacao<TV,TE>(TV validacao, TE entidade) 
             where TV : AbstractValidator<TE> 
             where TE : Entity
